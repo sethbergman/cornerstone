@@ -1,0 +1,14 @@
+{{#if product_results.products}}
+    <ul class="productGrid">
+
+        {{#each product_results.products}}
+        <li class="product">
+            {{> components/products/card alternate=true show_compare=../show_compare theme_settings=../theme_settings}}
+        </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p class="quickSearchMessage">
+        {{lang 'search.results.quick_count' count=pagination.product_results.total search_query=forms.search.query}}
+    </p>
+{{/if}}
